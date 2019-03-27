@@ -17,7 +17,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.IOException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class SMGPXmlConfigTest {
 
@@ -26,7 +26,7 @@ public class SMGPXmlConfigTest {
     @Autowired
     SMGPConnection smgpConnection;
 
-    @Test
+    //@Test
     public void testSend() {
         smgpConnection.connect();
         if (smgpConnection.isConnected()) {
@@ -48,7 +48,7 @@ public class SMGPXmlConfigTest {
         }
     }
 
-    @Test
+    //@Test
     public void testSendWidthExtId() {
         smgpConnection.connect();
         // 注册全局回调函数

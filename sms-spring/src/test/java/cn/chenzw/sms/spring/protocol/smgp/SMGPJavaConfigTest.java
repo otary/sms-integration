@@ -11,13 +11,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.IOException;
 
-@RunWith(SpringJUnit4ClassRunner.class)
+//@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class})
 public class SMGPJavaConfigTest {
     @Autowired
     SMGPConnection smgpConnection;
 
-    @Test
+    //@Test
     public void testSend() {
         smgpConnection.connect();
         if (smgpConnection.isConnected()) {
