@@ -1,0 +1,17 @@
+<Configuration status="OFF">
+    <Properties>
+        <property name="log_pattern">%d{yyyy-MM-dd HH:mm:ss z} %-5level %class{36}%L%M - %msg%xEx%n</property>
+        <property name="log-path">${web:rootDir}/logs</property>
+        <property name="every_file_size">5M</property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${log_pattern}"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <root level="debug">
+            <appender-ref ref="Console"/>
+        </root>
+    </Loggers>
+</Configuration>

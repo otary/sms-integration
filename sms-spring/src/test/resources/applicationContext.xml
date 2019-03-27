@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="smgpConnection" class="cn.chenzw.sms.spring.protocol.smgp.SMGPConnectionFactoryBean">
+        <property name="host" value="139.224.36.226"/>
+        <property name="port" value="8890"/>
+        <property name="clientId" value="FJDFCC"/>
+        <property name="password" value="FJDFCC121"/>
+    </bean>
+</beans>
