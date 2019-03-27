@@ -12,5 +12,27 @@
     </modules>
     <packaging>pom</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.sonatype.oss</groupId>
+            <artifactId>oss-parent</artifactId>
+            <version>9</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
 
+    <scm>
+        <tag>master</tag>
+        <url>git@github.com:otary/sms-integration.git</url>
+        <connection>scm:git:git@github.com:otary/sms-integration.git</connection>
+        <developerConnection>scm:git:git@github.com:otary/sms-integration.git</developerConnection>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>chenzw</name>
+            <email>656469722@qq.com</email>
+            <organization>ffcs</organization>
+        </developer>
+    </developers>
 </project>
