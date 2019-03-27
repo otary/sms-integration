@@ -22,7 +22,10 @@ public class SMGPTester {
     private static Logger log = LoggerFactory.getLogger(SMGPTester.class);
 
 
-    @Test
+    /**
+     * 简单的发送
+     */
+    //@Test
     public void testSend() {
         SMGPConnection conn = new SMGPConnection();
         conn.setClientId("xxx");
@@ -52,7 +55,10 @@ public class SMGPTester {
         }
     }
 
-    @Test
+    /**
+     * 注册有回调函数并且发送自定义主键ID
+     */
+    //@Test
     public void testSendWidthExtId() {
         SMGPConnection conn = new SMGPConnection();
         conn.setClientId("xxx");
