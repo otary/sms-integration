@@ -251,7 +251,7 @@ public class SMGPSession implements Session {
             default: {
                 for (Callback globalCallback : globalCallbacks) {
                     if (globalCallback instanceof SubmitCallback) {
-                        ((SubmitCallback) globalCallbacks).onSendFailure(connection, rsp);
+                        ((SubmitCallback) globalCallback).onSendFailure(connection, rsp);
                     }
                 }
                 for (Callback callback : this.callbacks) {
