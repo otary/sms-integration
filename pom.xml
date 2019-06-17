@@ -8,6 +8,7 @@
     <artifactId>sms-integration</artifactId>
     <version>1.0</version>
     <modules>
+        <module>sms-core</module>
         <module>sms-spring</module>
     </modules>
     <packaging>pom</packaging>
@@ -35,4 +36,6 @@
             <organization>ffcs</organization>
         </developer>
     </developers>
+
+
 </project>

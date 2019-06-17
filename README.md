@@ -1,16 +1,15 @@
 # sms-integration
 基于SMGP3.4协议、CMPP协议的短信发送框架
 
+![jdk](https://img.shields.io/badge/jdk-1.6-brightgreen.svg)
+![spring](https://img.shields.io/badge/spring-4.3.22.RELEASE-brightgreen.svg)
 
 
 ## SMGP协议
 
-
-
 #### 核心类
 
 - SMGPConnection
-
 
 #### 示例
 
