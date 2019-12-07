@@ -1,6 +1,5 @@
 package cn.chenzw.sms.spring.protocol.smgp;
 
-import cn.chenzw.sms.core.Connection;
 import cn.chenzw.sms.core.protocol.smgp.SMGPConnection;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;

@@ -5,8 +5,6 @@ import cn.chenzw.sms.core.Message;
 import cn.chenzw.sms.core.Session;
 import cn.chenzw.sms.core.protocol.cmpp.message.*;
 import cn.chenzw.sms.core.protocol.cmpp.util.SequenceGenerator;
-import cn.chenzw.sms.core.protocol.smgp.message.SMGPBaseMessage;
-import cn.chenzw.sms.core.protocol.smgp.message.SMGPSubmitMessage;
 import cn.chenzw.sms.core.support.callback.ConnectionCallback;
 import cn.chenzw.sms.core.support.callback.SubmitCallback;
 import org.slf4j.Logger;
@@ -134,7 +132,7 @@ public class CMPPSession implements Session {
                 if (baseMsg instanceof CMPPActiveTestMessage) {
                     process((CMPPActiveTestMessage) baseMsg);
                 } else if (baseMsg instanceof CMPPActiveTestRespMessage) {
-                    // do nothing
+                    process(baseMsg);
                 } else if (baseMsg instanceof CMPPTerminateRespMessage) {
                     process((CMPPTerminateRespMessage) baseMsg);
                 } else if (message instanceof CMPPSubmitRespMessage) {

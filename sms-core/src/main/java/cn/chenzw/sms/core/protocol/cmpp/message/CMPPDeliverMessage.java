@@ -3,7 +3,6 @@ package cn.chenzw.sms.core.protocol.cmpp.message;
 import cn.chenzw.sms.core.protocol.cmpp.util.ByteUtils;
 import cn.chenzw.sms.core.protocol.cmpp.util.MsgUtils;
 
-import java.io.UnsupportedEncodingException;
 import java.util.Arrays;
 
 /**

@@ -3,6 +3,7 @@ package cn.chenzw.sms.spring.protocol.smgp;
 import cn.chenzw.sms.core.Session;
 import cn.chenzw.sms.core.protocol.smgp.SMGPConnection;
 import cn.chenzw.sms.spring.protocol.smgp.config.AppConfig;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,13 +12,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.io.IOException;
 
-//@RunWith(SpringJUnit4ClassRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {AppConfig.class})
 public class SMGPJavaConfigTest {
     @Autowired
     SMGPConnection smgpConnection;
 
-    //@Test
+    @Test
+    @Ignore
     public void testSend() {
         smgpConnection.connect();
         if (smgpConnection.isConnected()) {

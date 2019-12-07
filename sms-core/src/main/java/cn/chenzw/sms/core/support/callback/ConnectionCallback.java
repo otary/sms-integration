@@ -3,8 +3,7 @@ package cn.chenzw.sms.core.support.callback;
 import cn.chenzw.sms.core.Callback;
 import cn.chenzw.sms.core.Connection;
 import cn.chenzw.sms.core.Message;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 
 /**
  * @author chenzw

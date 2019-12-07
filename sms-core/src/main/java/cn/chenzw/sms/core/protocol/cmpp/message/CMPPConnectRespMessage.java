@@ -7,8 +7,8 @@ import java.util.Arrays;
 
 /**
  * 连接回复信息
- * @author chenzw
  *
+ * @author chenzw
  */
 
 public class CMPPConnectRespMessage extends CMPPBaseMessage {
@@ -25,6 +25,7 @@ public class CMPPConnectRespMessage extends CMPPBaseMessage {
 
     /**
      * getters
+     *
      * @return
      */
     public int getStatus() {
@@ -41,6 +42,7 @@ public class CMPPConnectRespMessage extends CMPPBaseMessage {
 
     /**
      * setters
+     *
      * @param status
      */
     public void setStatus(int status) {
@@ -57,11 +59,7 @@ public class CMPPConnectRespMessage extends CMPPBaseMessage {
 
     public boolean checkSharedSecret(byte[] authenticatorSource, String localSecret) {
         byte[] localAuthenticator = getAuthenticator(status, authenticatorSource, localSecret);
-        if (Arrays.equals(localAuthenticator, authenticatorISMG)) {
-            return true;
-        } else {
-            return false;
-        }
+        return Arrays.equals(localAuthenticator, authenticatorISMG);
     }
 
     @Override
@@ -116,7 +114,6 @@ public class CMPPConnectRespMessage extends CMPPBaseMessage {
     }
 
     /**
-     *
      * @param status
      * @param authenticatorSource
      * @param secret

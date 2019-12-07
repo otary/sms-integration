@@ -34,13 +34,13 @@ public class CMPPConstants {
         byte headBytes[] = new byte[4];
         int offset = 0;
         ByteUtils.bytesCopy(bytes, headBytes, offset, offset + 3, 0);
-        int totalLength = ByteUtils.Bytes4ToInt(headBytes);
+        // int totalLength = ByteUtils.Bytes4ToInt(headBytes);
         offset += 4;
         ByteUtils.bytesCopy(bytes, headBytes, offset, offset + 3, 0);
         int commandId = ByteUtils.Bytes4ToInt(headBytes);
         offset += 4;
         ByteUtils.bytesCopy(bytes, headBytes, offset, offset + 3, 0);
-        int sequenceId = ByteUtils.Bytes4ToInt(headBytes);
+        // int sequenceId = ByteUtils.Bytes4ToInt(headBytes);
 
         CMPPBaseMessage baseMsg = null;
         switch (commandId) {

@@ -22,8 +22,10 @@ public class MsgUtils {
                     break;
                 case 3:
                     binCnt = msgText.getBytes("US-ASCII");
+                    break;
                 case 4:
                     binCnt = msgText.getBytes("US-ASCII");
+                    break;
                 case 8:
                     binCnt = msgText.getBytes("ISO-10646-UCS-2");
                     break;

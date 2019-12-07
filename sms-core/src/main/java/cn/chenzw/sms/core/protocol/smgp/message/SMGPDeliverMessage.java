@@ -192,13 +192,6 @@ public class SMGPDeliverMessage extends SMGPBaseMessage {
         bodyBytes[offset] = (byte) msgLength;
         offset += 1;
 
-        if (bMsgContent == null && msgContent != null) {
-            try {
-
-            } catch (Exception ex) {
-                throw ex;
-            }
-        }
         if (bMsgContent != null) {
             ByteUtils.rfillBytes(bMsgContent, msgLength, bodyBytes, offset);
         }

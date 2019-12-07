@@ -78,11 +78,7 @@ public final class CMPPConnectMessage extends CMPPBaseMessage {
 
     public boolean checkSharedSecret(String localSecret) {
         byte[] localAuthenticator = getAuthenticator(sourceAddr, localSecret, timestamp);
-        if (Arrays.equals(localAuthenticator, authenticatorSource)) {
-            return true;
-        } else {
-            return false;
-        }
+        return Arrays.equals(localAuthenticator, authenticatorSource);
     }
 
 

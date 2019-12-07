@@ -186,8 +186,9 @@ public class ByteUtils {
      */
     public static String toPrintableString(byte[] b) {
 
-        if (b == null)
+        if (b == null) {
             return null;
+        }
 
         StringBuffer sb = new StringBuffer();
         byte[] t = new byte[1];

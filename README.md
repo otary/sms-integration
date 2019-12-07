@@ -4,7 +4,7 @@
 ![jdk](https://img.shields.io/badge/jdk-1.6-brightgreen.svg)
 ![spring](https://img.shields.io/badge/spring-4.3.22.RELEASE-brightgreen.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fbaa198ef0ed46409d93384dfbb6643b)](https://www.codacy.com/manual/otary/sms-integration?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=otary/sms-integration&amp;utm_campaign=Badge_Grade)
-
+[![Build Status](https://travis-ci.org/otary/sms-integration.svg?branch=master)](https://travis-ci.org/otary/sms-integration)
 
 ## SMGP协议
 

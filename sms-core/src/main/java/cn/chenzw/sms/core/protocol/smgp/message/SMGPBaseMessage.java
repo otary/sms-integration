@@ -144,10 +144,8 @@ public class SMGPBaseMessage implements Message {
         TLV tlv = null;
         for (int i = 0; i < size; i++) {
             tlv = (TLV) optionalParameters.get(i);
-            if (tlv != null) {
-                if (tlv.getTag() == tag) {
-                    return tlv;
-                }
+            if (tlv != null && tlv.getTag() == tag) {
+                return tlv;
             }
         }
         return null;

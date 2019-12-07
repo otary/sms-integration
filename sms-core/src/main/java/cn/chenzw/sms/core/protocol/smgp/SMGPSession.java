@@ -20,6 +20,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * 登陆会话
+ *
  * @author chenzw
  */
 public class SMGPSession implements Session {
@@ -68,7 +69,8 @@ public class SMGPSession implements Session {
         byte[] bContent = null;
         try {
             bContent = content.getBytes("iso-10646-ucs-2");
-        } catch (UnsupportedEncodingException e) {}
+        } catch (UnsupportedEncodingException e) {
+        }
 
         if (bContent != null && bContent.length <= 140) {
             submit.setBMsgContent(bContent);
@@ -148,7 +150,7 @@ public class SMGPSession implements Session {
                 if (baseMsg instanceof SMGPActiveTestMessage) {
                     process((SMGPActiveTestMessage) baseMsg);
                 } else if (baseMsg instanceof SMGPActiveTestRespMessage) {
-                    // do nothing
+                    process(baseMsg);
                 } else if (baseMsg instanceof SMGPExitRespMessage) {
                     process((SMGPExitRespMessage) baseMsg);
                 } else if (message instanceof SMGPSubmitRespMessage) {

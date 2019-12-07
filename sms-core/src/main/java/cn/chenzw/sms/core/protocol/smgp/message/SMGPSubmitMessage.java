@@ -44,6 +44,21 @@ public class SMGPSubmitMessage extends SMGPBaseMessage {
 
     private String reserve = ""; // 8
 
+    private TLVByte tpPid = new TLVByte(SMGPConstants.OPT_TP_PID);
+    private TLVByte tpUdhi = new TLVByte(SMGPConstants.OPT_TP_UDHI);
+    private TLVString linkId = new TLVString(SMGPConstants.OPT_LINK_ID);
+    private TLVString msgSrc = new TLVString(SMGPConstants.OPT_MSG_SRC);
+    private TLVByte chargeUserType = new TLVByte(SMGPConstants.OPT_CHARGE_USER_TYPE);
+    private TLVByte chargeTermType = new TLVByte(SMGPConstants.OPT_CHARGE_TERM_TYPE);
+    private TLVString chargeTermPseudo = new TLVString(SMGPConstants.OPT_CHARGE_TERM_PSEUDO);
+    private TLVByte destTermType = new TLVByte(SMGPConstants.OPT_DEST_TERM_TYPE);
+    private TLVString destTermPseudo = new TLVString(SMGPConstants.OPT_DEST_TERM_PSEUDO);
+    private TLVByte pkTotal = new TLVByte(SMGPConstants.OPT_PK_TOTAL);
+    private TLVByte pkNumber = new TLVByte(SMGPConstants.OPT_PK_NUMBER);
+    private TLVByte submitMsgType = new TLVByte(SMGPConstants.OPT_SUBMIT_MSG_TYPE);
+    private TLVByte spDealResult = new TLVByte(SMGPConstants.OPT_SP_DEAL_RESULT);
+    private TLVString mServiceId = new TLVString(SMGPConstants.OPT_M_SERVICE_ID);
+
 
     public SMGPSubmitMessage() {
         this.commandId = SMGPConstants.SMGP_SUBMIT;
@@ -62,22 +77,6 @@ public class SMGPSubmitMessage extends SMGPBaseMessage {
         registerOptional(spDealResult);
         registerOptional(mServiceId);
     }
-
-
-    private TLVByte tpPid = new TLVByte(SMGPConstants.OPT_TP_PID);
-    private TLVByte tpUdhi = new TLVByte(SMGPConstants.OPT_TP_UDHI);
-    private TLVString linkId = new TLVString(SMGPConstants.OPT_LINK_ID);
-    private TLVString msgSrc = new TLVString(SMGPConstants.OPT_MSG_SRC);
-    private TLVByte chargeUserType = new TLVByte(SMGPConstants.OPT_CHARGE_USER_TYPE);
-    private TLVByte chargeTermType = new TLVByte(SMGPConstants.OPT_CHARGE_TERM_TYPE);
-    private TLVString chargeTermPseudo = new TLVString(SMGPConstants.OPT_CHARGE_TERM_PSEUDO);
-    private TLVByte destTermType = new TLVByte(SMGPConstants.OPT_DEST_TERM_TYPE);
-    private TLVString destTermPseudo = new TLVString(SMGPConstants.OPT_DEST_TERM_PSEUDO);
-    private TLVByte pkTotal = new TLVByte(SMGPConstants.OPT_PK_TOTAL);
-    private TLVByte pkNumber = new TLVByte(SMGPConstants.OPT_PK_NUMBER);
-    private TLVByte submitMsgType = new TLVByte(SMGPConstants.OPT_SUBMIT_MSG_TYPE);
-    private TLVByte spDealResult = new TLVByte(SMGPConstants.OPT_SP_DEAL_RESULT);
-    private TLVString mServiceId = new TLVString(SMGPConstants.OPT_M_SERVICE_ID);
 
     public void setTpPid(byte value) {
         tpPid.setValue(value);
@@ -255,7 +254,7 @@ public class SMGPSubmitMessage extends SMGPBaseMessage {
 
 
         if (destTermIdCount >= 100 || destTermIdCount <= 0) {
-            throw new Exception("destTermIdCount must be in [1,99],but " + destTermIdCount);
+            throw new RuntimeException("destTermIdCount must be in [1,99],but " + destTermIdCount);
         }
         destTermIdArray = new String[destTermIdCount];
         for (int i = 0; i < destTermIdCount; i++) {

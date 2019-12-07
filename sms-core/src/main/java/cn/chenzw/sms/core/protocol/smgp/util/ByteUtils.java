@@ -144,7 +144,6 @@ public class ByteUtils {
         if (i == src.length) {
             return new byte[0];
         }
-        ;
         byte[] tmp = new byte[src.length - i];
         System.arraycopy(src, i, tmp, 0, src.length - i);
         return tmp;

@@ -6,6 +6,7 @@ import cn.chenzw.sms.core.Session;
 import cn.chenzw.sms.core.protocol.smgp.SMGPConnection;
 import cn.chenzw.sms.core.support.callback.ConnectionCallback;
 import cn.chenzw.sms.core.support.callback.SubmitCallback;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -21,11 +22,11 @@ import java.io.IOException;
 public class SMGPTester {
     private static Logger log = LoggerFactory.getLogger(SMGPTester.class);
 
-
     /**
      * 简单的发送
      */
-    //@Test
+    @Test
+    @Ignore
     public void testSend() {
         SMGPConnection conn = new SMGPConnection();
         conn.setClientId("xxx");
@@ -58,7 +59,8 @@ public class SMGPTester {
     /**
      * 注册有回调函数并且发送自定义主键ID
      */
-    //@Test
+    @Test
+    @Ignore
     public void testSendWidthExtId() {
         SMGPConnection conn = new SMGPConnection();
         conn.setClientId("xxx");
