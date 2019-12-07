@@ -1,17 +1,18 @@
-package cn.chenzw.sms.spring.protocol.smgp;
+package cn.chenzw.sms.spring.protocol.cmpp;
 
-import cn.chenzw.sms.core.protocol.smgp.SMGPConnection;
+import cn.chenzw.sms.core.protocol.cmpp.CMPPConnection;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
+ *
  * @author chenzw
  */
-public class SMGPConnectionFactoryBean implements FactoryBean<SMGPConnection>, InitializingBean, DisposableBean {
+public class CMPPConnectionFactoryBean implements FactoryBean<CMPPConnection>, InitializingBean, DisposableBean {
     private String host;
     private int port;
-    private String clientId;
+    private String sourceAddr;
     private String password;
     private Integer version;
     private Integer loginMode;
@@ -19,7 +20,8 @@ public class SMGPConnectionFactoryBean implements FactoryBean<SMGPConnection>, I
     private Integer sendInterval;
     private Boolean keepAlive;
 
-    private SMGPConnection connection;
+    private CMPPConnection connection;
+
 
     public void setHost(String host) {
         this.host = host;
@@ -29,8 +31,8 @@ public class SMGPConnectionFactoryBean implements FactoryBean<SMGPConnection>, I
         this.port = port;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setSourceAddr(String sourceAddr) {
+        this.sourceAddr = sourceAddr;
     }
 
     public void setPassword(String password) {
@@ -39,6 +41,10 @@ public class SMGPConnectionFactoryBean implements FactoryBean<SMGPConnection>, I
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    public void setLoginMode(Integer loginMode) {
+        this.loginMode = loginMode;
     }
 
     public void setAutoReconnect(Boolean autoReconnect) {
@@ -53,27 +59,33 @@ public class SMGPConnectionFactoryBean implements FactoryBean<SMGPConnection>, I
         this.keepAlive = keepAlive;
     }
 
-    public void setLoginMode(Integer loginMode) {
-        this.loginMode = loginMode;
+    public void setConnection(CMPPConnection connection) {
+        this.connection = connection;
     }
 
-    public SMGPConnection getObject() throws Exception {
+    public CMPPConnection getObject() throws Exception {
         return this.connection;
     }
 
     public Class<?> getObjectType() {
-        return SMGPConnection.class;
+        return CMPPConnection.class;
     }
 
     public boolean isSingleton() {
         return true;
     }
 
+    public void destroy() throws Exception {
+        if (this.connection != null) {
+            this.connection.close();
+        }
+    }
+
     public void afterPropertiesSet() throws Exception {
-        this.connection = new SMGPConnection();
+        this.connection = new CMPPConnection();
         this.connection.setHost(host);
         this.connection.setPort(port);
-        this.connection.setClientId(clientId);
+        this.connection.setSourceAddr(sourceAddr);
         this.connection.setPassword(password);
         if (loginMode != null) {
             this.connection.setLoginMode((byte) loginMode.intValue());
@@ -89,12 +101,6 @@ public class SMGPConnectionFactoryBean implements FactoryBean<SMGPConnection>, I
         }
         if (keepAlive != null) {
             this.connection.setKeepAlive(keepAlive);
-        }
-    }
-
-    public void destroy() throws Exception {
-        if (this.connection != null) {
-            this.connection.close();
         }
     }
 }

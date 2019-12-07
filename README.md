@@ -17,7 +17,12 @@
 ``` xml
 <dependency>
     <groupId>cn.chenzw.sms</groupId>
-    <artifactId>sms-integration</artifactId>
+    <artifactId>sms-core</artifactId>
+    <version>1.0</version>
+</dependency>
+<dependency>
+    <groupId>cn.chenzw.sms</groupId>
+    <artifactId>sms-spring</artifactId>
     <version>1.0</version>
 </dependency>
 ```

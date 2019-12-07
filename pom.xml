@@ -12,6 +12,9 @@
         <module>sms-spring</module>
     </modules>
     <packaging>pom</packaging>
+    <url>http://maven.apache.org</url>
+    <name>sms-integration</name>
+    <description>sms integration</description>
 
     <build>
         <plugins>
@@ -91,23 +94,6 @@
                                 <configuration>
                                     <additionalparam>-Xdoclint:none</additionalparam>
                                 </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-assembly-plugin</artifactId>
-                        <version>2.3</version>
-                        <configuration>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
                             </execution>
                         </executions>
                     </plugin>
