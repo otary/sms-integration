@@ -7,13 +7,13 @@ import cn.chenzw.sms.core.protocol.smgp.util.ByteUtils;
  */
 public class SMGPSubmitRespMessage extends SMGPBaseMessage {
 
-    public SMGPSubmitRespMessage() {
-        this.commandId = SMGPConstants.SMGP_SUBMIT_RESP;
-    }
-
     private byte[] msgId; // 10
 
     private int status; // 4
+
+    public SMGPSubmitRespMessage() {
+        this.commandId = SMGPConstants.SMGP_SUBMIT_RESP;
+    }
 
     @Override
     protected int setBody(byte[] bodyBytes) throws Exception {

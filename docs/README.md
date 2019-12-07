@@ -4,17 +4,34 @@
 ![jdk](https://img.shields.io/badge/jdk-1.6-brightgreen.svg)
 ![spring](https://img.shields.io/badge/spring-4.3.22.RELEASE-brightgreen.svg)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fbaa198ef0ed46409d93384dfbb6643b)](https://www.codacy.com/manual/otary/sms-integration?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=otary/sms-integration&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/otary/sms-integration.svg?branch=master)](https://travis-ci.org/otary/sms-integration)
 
+
+## 特性
+
+- [x] 支持SMGP3.4协议、CMPP协议
+
+
+## 依赖
+
+``` xml
+<dependency>
+    <groupId>cn.chenzw.sms</groupId>
+    <artifactId>sms-integration</artifactId>
+    <version>1.0</version>
+</dependency>
+```
 
 ## SMGP协议
 
-#### 核心类
+### 核心类
 
 - SMGPConnection
 
-#### 示例
+### 示例
 
 >  简单代码
+
 ``` java
 import cn.chenzw.sms.core.Connection;
 import cn.chenzw.sms.core.Message;
@@ -48,6 +65,7 @@ if (conn.isConnected()) {
 ```
 
 > 携带自定义ID并注册回调函数
+
 ``` java
 SMGPConnection conn = new SMGPConnection();
 conn.setClientId("xxx");

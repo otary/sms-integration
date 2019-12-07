@@ -4,13 +4,13 @@ import cn.chenzw.sms.core.protocol.smgp.util.ByteUtils;
 
 public class SMGPDeliverRespMessage extends SMGPBaseMessage {
 
-	public SMGPDeliverRespMessage() {
-		this.commandId = SMGPConstants.SMGP_DELIVER_RESP;
-	}
-
 	private byte[] msgId=new byte[10]; // 10
 
 	private int status; // 4
+
+	public SMGPDeliverRespMessage() {
+		this.commandId = SMGPConstants.SMGP_DELIVER_RESP;
+	}
 
 	@Override
 	protected int setBody(byte[] bodyBytes) throws Exception {

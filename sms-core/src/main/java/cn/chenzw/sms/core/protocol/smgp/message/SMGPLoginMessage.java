@@ -4,10 +4,6 @@ import cn.chenzw.sms.core.protocol.smgp.util.ByteUtils;
 
 public class SMGPLoginMessage extends SMGPBaseMessage {
 
-    public SMGPLoginMessage() {
-        this.commandId = SMGPConstants.SMGP_LOGIN;
-    }
-
     private String clientId; // 8
 
     private byte[] clientAuth = new byte[16]; // 16
@@ -17,6 +13,10 @@ public class SMGPLoginMessage extends SMGPBaseMessage {
     private int timestamp; // 4
 
     private byte version; // 1
+
+    public SMGPLoginMessage() {
+        this.commandId = SMGPConstants.SMGP_LOGIN;
+    }
 
     @Override
     protected int setBody(byte[] bodyBytes) throws Exception {
