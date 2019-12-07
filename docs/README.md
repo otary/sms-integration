@@ -11,6 +11,9 @@
 
 - [x] 支持SMGP3.4协议、CMPP协议
 
+## 文档
+
+[中文文档](https://otary.github.io/sms-integration/)
 
 ## 依赖
 
